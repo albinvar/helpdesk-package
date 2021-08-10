@@ -11,6 +11,6 @@ class HelpdeskFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'helpdesk-package';
+        return 'helpdesk';
     }
 }
