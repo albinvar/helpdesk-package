@@ -11,6 +11,7 @@ class HelpdeskServiceProvider extends PackageServiceProvider
 {
     protected $migrations = [
         'create_helpdesk_roles_table',
+        'create_helpdesk_departments_table'
     ];
 
     public function configurePackage(Package $package): void

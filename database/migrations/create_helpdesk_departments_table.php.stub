@@ -8,9 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('helpdesk_roles', function (Blueprint $table) {
-            $table->integer('id')->primary();
+        Schema::create('helpdesk_departments', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 };
