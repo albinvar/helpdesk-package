@@ -26,7 +26,7 @@ class HelpdeskServiceProvider extends PackageServiceProvider
             ->name('helpdesk-package')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration($this->migrations)
+            ->hasMigrations($this->migrations)
             ->hasCommand(HelpdeskCommand::class);
     }
 }
