@@ -49,13 +49,13 @@ class HelpdeskInstallCommand extends Command
     {
         $params = [
             '--provider' => "Albinvar\Helpdesk\HelpdeskServiceProvider",
-            '--tag' => "helpdesk-config"
+            '--tag' => "helpdesk-config",
         ];
 
         if ($forcePublish === true) {
             $params['--force'] = true;
         }
 
-       $this->call('vendor:publish', $params);
+        $this->call('vendor:publish', $params);
     }
 }

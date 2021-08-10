@@ -9,15 +9,13 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class HelpdeskServiceProvider extends PackageServiceProvider
 {
-	
-	protected $migrations = [
-		'create_helpdesk_roles_table',
-	];
-	
-	
+    protected $migrations = [
+        'create_helpdesk_roles_table',
+    ];
+
     public function configurePackage(Package $package): void
     {
-    	
+
         /*
          * This class is a Package Service Provider
          *
@@ -29,8 +27,8 @@ class HelpdeskServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigrations($this->migrations)
             ->hasCommands([
-				HelpdeskCommand::class,
-				HelpdeskInstallCommand::class,
-			]);
+                HelpdeskCommand::class,
+                HelpdeskInstallCommand::class,
+            ]);
     }
 }
