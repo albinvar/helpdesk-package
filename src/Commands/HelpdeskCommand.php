@@ -6,9 +6,9 @@ use Illuminate\Console\Command;
 
 class HelpdeskCommand extends Command
 {
-    public $signature = 'helpdesk-package';
+    public $signature = 'helpdesk';
 
-    public $description = 'My command';
+    public $description = 'Helpdesk commands';
 
     public function handle()
     {
