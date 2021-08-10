@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('helpdesk_attachments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('comment_id')->constrained('comments');
+            $table->foreignId('comment_id')->constrained('helpdesk_comments');
             $table->string('name');
             $table->text('path');
             $table->timestamps();

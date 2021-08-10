@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('helpdesk_comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ticket_id')->constrained('tickets');
+            $table->foreignId('ticket_id')->constrained('helpdesk_tickets');
             $table->text('comment');
             $table->integer('rating');
             $table->timestamps();
