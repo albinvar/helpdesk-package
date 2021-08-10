@@ -49,7 +49,7 @@ class HelpdeskInstallCommand extends Command
     {
         $params = [
             '--provider' => "Albinvar\Helpdesk\HelpdeskServiceProvider",
-            '--tag' => "config"
+            '--tag' => "helpdesk-config"
         ];
 
         if ($forcePublish === true) {

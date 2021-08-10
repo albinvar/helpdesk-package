@@ -24,7 +24,7 @@ class HelpdeskServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('helpdesk-package')
+            ->name('helpdesk')
             ->hasConfigFile()
             ->hasViews()
             ->hasMigrations($this->migrations)
