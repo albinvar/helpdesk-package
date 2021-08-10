@@ -12,4 +12,12 @@ return new class extends Migration
             $table->foreignId('helpdesk_role_id')->constrained('helpdesk_roles');
         });
     }
+    
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['helpdesk_role_id']);
+            $table->dropColumn('helpdesk_role_id');
+        });
+    }
 };
