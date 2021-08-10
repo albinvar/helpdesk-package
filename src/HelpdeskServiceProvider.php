@@ -13,6 +13,9 @@ class HelpdeskServiceProvider extends PackageServiceProvider
         'create_helpdesk_roles_table',
         'create_helpdesk_departments_table',
         'create_helpdesk_priorities_table',
+        'create_helpdesk_tickets_table',
+        'create_helpdesk_comments_table',
+        'create_helpdesk_attachments_table',
     ];
 
     public function configurePackage(Package $package): void
