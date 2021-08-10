@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Albinvar\Helpdesk\Tests;
 
 class ExampleTest extends TestCase
 {

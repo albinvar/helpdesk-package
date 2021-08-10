@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Albinvar\Helpdesk\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class HelpdeskCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'helpdesk-package';
 
     public $description = 'My command';
 

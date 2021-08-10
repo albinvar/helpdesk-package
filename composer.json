@@ -1,17 +1,17 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "albinvar/helpdesk-package",
+    "description": "This is my package Helpdesk",
     "keywords": [
-        ":vendor_name",
+        "albinvar",
         "laravel",
-        "package_slug"
+        "helpdesk-package"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/albinvar/helpdesk-package",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Albin Varghese",
+            "email": "albin8285@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Albinvar\\Helpdesk\\": "src",
+            "Albinvar\\Helpdesk\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Albinvar\\Helpdesk\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Albinvar\\Helpdesk\\HelpdeskServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "Helpdesk": "Albinvar\\Helpdesk\\HelpdeskFacade"
             }
         }
     },
