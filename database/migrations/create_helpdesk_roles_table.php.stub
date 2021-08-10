@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('helpdesk_roles', function (Blueprint $table) {
-            $table->primary('id');
+            $table->integer('id')->unsigned()->unique();
             $table->string('name');
         });
     }
