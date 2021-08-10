@@ -16,6 +16,6 @@ return new class extends Migration
     
     public function down()
     {
-    	Schema::dropIfExists('helpdesk_prioritoies');
+    	Schema::dropIfExists('helpdesk_priorities');
     }
 };
