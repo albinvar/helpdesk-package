@@ -2,9 +2,9 @@
 
 namespace Albinvar\Helpdesk;
 
+use Albinvar\Helpdesk\Commands\HelpdeskCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Albinvar\Helpdesk\Commands\HelpdeskCommand;
 
 class HelpdeskServiceProvider extends PackageServiceProvider
 {

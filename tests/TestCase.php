@@ -2,9 +2,9 @@
 
 namespace Albinvar\Helpdesk\Tests;
 
+use Albinvar\Helpdesk\HelpdeskServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Albinvar\Helpdesk\HelpdeskServiceProvider;
 
 class TestCase extends Orchestra
 {
