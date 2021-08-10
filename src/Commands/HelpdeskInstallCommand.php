@@ -5,7 +5,7 @@ namespace Albinvar\Helpdesk\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class HelpdeskCommand extends Command
+class HelpdeskInstallCommand extends Command
 {
     public $signature = 'helpdesk:install';
 
