@@ -2,7 +2,7 @@
 
 namespace Albinvar\Helpdesk;
 
-use Helpdesk;
+use Albinvar\Helpdesk\HelpdeskFacade;
 use Albinvar\Helpdesk\Commands\HelpdeskCommand;
 use Albinvar\Helpdesk\Commands\HelpdeskInstallCommand;
 use Spatie\LaravelPackageTools\Package;
