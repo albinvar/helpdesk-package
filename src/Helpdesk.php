@@ -2,10 +2,18 @@
 
 namespace Albinvar\Helpdesk;
 
+use Albinvar\Helpdesk\Models\HelpdeskTicket;
+
 class Helpdesk
 {
-    public function greet()
+	
+	public function __construct()
+	{
+		//
+	}
+	
+    public function getTickets()
     {
-        echo "Hello";
+        return HelpdeskTicket::all();
     }
 }
