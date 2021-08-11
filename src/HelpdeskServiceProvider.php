@@ -2,7 +2,6 @@
 
 namespace Albinvar\Helpdesk;
 
-use Albinvar\Helpdesk\HelpdeskFacade;
 use Albinvar\Helpdesk\Commands\HelpdeskCommand;
 use Albinvar\Helpdesk\Commands\HelpdeskInstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -22,11 +21,10 @@ class HelpdeskServiceProvider extends PackageServiceProvider
 
     public function configurePackage(Package $package): void
     {
-    	
-	    $this->app->bind('helpdesk', function($app) {
-			return new Helpdesk();
-		});
-	    
+        $this->app->bind('helpdesk', function ($app) {
+            return new Helpdesk();
+        });
+
         /*
          * This class is a Package Service Provider
          *
