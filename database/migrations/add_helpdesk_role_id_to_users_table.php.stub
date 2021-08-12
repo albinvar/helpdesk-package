@@ -9,14 +9,13 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('helpdesk_role_id')->nullable()->constrained('helpdesk_roles');
+            $table->integer('helpdesk_role_id')->default(1);
         });
     }
     
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['helpdesk_role_id']);
             $table->dropColumn('helpdesk_role_id');
         });
     }
