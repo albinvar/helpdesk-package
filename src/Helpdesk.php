@@ -19,12 +19,7 @@ class Helpdesk
 
     public function department($id=null)
     {
-    	if(is_null($id))
-	    {
-			$this->collection = HelpdeskDepartment::all();
-		} else {
-			$this->collection = HelpdeskDepartment::find($id);
-		}
+    	(is_null($id)) ? $this->collection = HelpdeskDepartment::all() : $this->collection = HelpdeskDepartment::find($id);
     	
     	$this->type = 'department';
         return $this;
