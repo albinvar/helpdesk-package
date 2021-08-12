@@ -4,6 +4,7 @@ namespace Albinvar\Helpdesk;
 
 use Albinvar\Helpdesk\Commands\HelpdeskCommand;
 use Albinvar\Helpdesk\Commands\HelpdeskInstallCommand;
+use Albinvar\Helpdesk\Commands\HelpdeskSeederCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -38,6 +39,7 @@ class HelpdeskServiceProvider extends PackageServiceProvider
             ->hasCommands([
                 HelpdeskCommand::class,
                 HelpdeskInstallCommand::class,
+                HelpdeskSeederCommand::class,
             ]);
     }
 }
