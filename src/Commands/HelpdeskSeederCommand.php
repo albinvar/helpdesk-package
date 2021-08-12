@@ -3,7 +3,6 @@
 namespace Albinvar\Helpdesk\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
 use Illuminate\Database\Seeder;
 
 class HelpdeskSeederCommand extends Command
@@ -16,7 +15,7 @@ class HelpdeskSeederCommand extends Command
     {
         $this->info('Seeding tables...');
 
-        
+
         if ($this->app->runningInConsole()) {
             if ($this->isConsoleCommandContains([ 'db:seed', '--seed' ], [ '--class', 'help', '-h' ])) {
                 $this->seeder();
@@ -24,10 +23,9 @@ class HelpdeskSeederCommand extends Command
         }
 
         $this->info('Seeding processed');
-    }   
-    
+    }
+
     private function seeder()
     {
-    	
     }
 }
