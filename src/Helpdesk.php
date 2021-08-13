@@ -4,10 +4,11 @@ namespace Albinvar\Helpdesk;
 
 use Albinvar\Helpdesk\Models\HelpdeskDepartment;
 use Albinvar\Helpdesk\Exceptions\ParentMethodNotSet;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class Helpdesk
 {
-    protected $collection = null;
+    protected $collection;
 
     protected $type;
 
@@ -22,13 +23,13 @@ class Helpdesk
         
         (is_null($id)) ? $this->collection = null
                         : $this->collection = HelpdeskDepartment::find($id);
-
+        
         return $this;
     }
 
     public function get()
     {
-    	if(! isset($this->collection))
+    	if(!isset($this->type))
 	    {
 			throw ParentMethodNotSet::message();
 		}
