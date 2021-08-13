@@ -14,8 +14,8 @@ class HelpdeskSeederCommand extends Command
     public function handle()
     {
         $this->info('Seeding tables...');
-        
-        
+
+
 
         $this->info('Seeding processed');
     }
