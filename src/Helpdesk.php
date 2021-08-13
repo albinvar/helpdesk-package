@@ -17,11 +17,11 @@ class Helpdesk
 
     public function department($id = null)
     {
-    	$this->type = __FUNCTION__;
-    
-    	(is_null($id)) ? $this->collection = null
-						: $this->collection = HelpdeskDepartment::find($id);
-						
+        $this->type = __FUNCTION__;
+
+        (is_null($id)) ? $this->collection = null
+                        : $this->collection = HelpdeskDepartment::find($id);
+
         return $this;
     }
 
@@ -29,9 +29,9 @@ class Helpdesk
     {
         return $this->collection;
     }
-    
+
     public function all()
     {
-		return $this->collection = HelpdeskDepartment::all();
+        return $this->collection = HelpdeskDepartment::all();
     }
 }
