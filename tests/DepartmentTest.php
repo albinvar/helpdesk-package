@@ -30,8 +30,7 @@ class DepartmentTest extends TestCase
 
         $this->assertEquals(Department::find($department->id), $helpdesk->department($department->id)->get());
     }
-    
-    
+
     /**
     check if the collection extracted from get method mathches eloquent model.
     **/
@@ -42,7 +41,7 @@ class DepartmentTest extends TestCase
         $helpdesk = new Helpdesk();
 
         $created = $helpdesk->department()->create($department->toArray());
-        
+
         $this->assertInstanceOf(Department::class, $created);
         $this->assertEquals($created->toArray(), $created->toArray());
     }
