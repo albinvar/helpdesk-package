@@ -11,11 +11,13 @@ class TestCase extends Orchestra
     public function setUp(): void
     {
         parent::setUp();
-
+        
+        
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Albinvar\\Helpdesk\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
+    
 
     protected function getPackageProviders($app)
     {
@@ -26,11 +28,13 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
+    	
         config()->set('database.default', 'testing');
-
-        /*
-        include_once __DIR__.'/../database/migrations/create_helpdesk-package_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        
+        
+        include_once __DIR__.'/../database/migrations/create_helpdesk_departments_table.php.stub';
+        
+        (new \CreateHelpdeskDepartmentsTable())->up();
+       
     }
 }
