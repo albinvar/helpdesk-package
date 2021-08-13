@@ -4,12 +4,14 @@ namespace Albinvar\Helpdesk;
 
 use Albinvar\Helpdesk\Exceptions\ParentMethodNotSet;
 use Albinvar\Helpdesk\Models\Department;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class Helpdesk
 {
     protected $collection;
 
-    protected $type;
+    protected static $type;
     
     protected static $types = ['department'];
 
@@ -20,7 +22,7 @@ class Helpdesk
 
     public function department($id = null)
     {
-        $this->type = __FUNCTION__;
+        static::$type = __FUNCTION__;
 
         (is_null($id)) ? $this->collection = null
                         : $this->collection = Department::find($id);
@@ -30,9 +32,7 @@ class Helpdesk
 
     public function get()
     {
-        if (! isset($this->type)) {
-            throw ParentMethodNotSet::message();
-        }
+        static::ThrowParentMethodNotSetExceptionIfAny();
         
         return $this->collection;
     }
@@ -45,16 +45,13 @@ class Helpdesk
     
     public function create(array $data=[])
     {
-    	if (! isset($this->type)) {
-            throw ParentMethodNotSet::message();
-        }
+        static::ThrowParentMethodNotSetExceptionIfAny();
         
-        if($this->type === static::$types[0]) {
+        if(static::$type === static::$types[0]) {
         	$this->collection = $this->createDepartment($data);
         }
         
         //
-        
         
         return $this->collection;
     }
@@ -62,12 +59,22 @@ class Helpdesk
     
     private function createDepartment(array $data)
     {
+    	//should be improved soon...
     	$array = [
 			'name' => $data['name'],
 			'description' => $data['description']
 		];
 		
+		//should be validated.
     	return Department::create($array);
+    }
+    
+    
+    public static function ThrowParentMethodNotSetExceptionIfAny()
+    {
+    	if (! isset(static::$type)) {
+            throw ParentMethodNotSet::message();
+        }
     }
     
 }
