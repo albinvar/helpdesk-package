@@ -37,7 +37,7 @@ class DepartmentTest extends TestCase
     public function test_if_new_deparment_can_be_created()
     {
         $department = Department::factory()->make();
-        
+
         $helpdesk = new Helpdesk();
 
         $created = $helpdesk->department()->create($department->toArray());
