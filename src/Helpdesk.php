@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Database\QueryException;
 
+
 class Helpdesk
 {
     protected $collection;
 
     protected static $type;
-    
+
     protected static $types = ['department'];
 
     public function __construct()
@@ -35,7 +36,7 @@ class Helpdesk
     public function get()
     {
         static::ThrowParentMethodNotSetExceptionIfAny();
-        
+
         return $this->collection;
     }
 
@@ -43,22 +44,20 @@ class Helpdesk
     {
         return $this->collection = Department::all();
     }
-    
-    
-    public function create(array $data=[])
+
+    public function create(array $data = [])
     {
         static::ThrowParentMethodNotSetExceptionIfAny();
-        
-        if(static::$type === static::$types[0]) {
-        	$this->collection = $this->createDepartment($data);
+
+        if (static::$type === static::$types[0]) {
+            $this->collection = $this->createDepartment($data);
         }
-        
+
         //
-        
+
         return $this->collection;
     }
-    
-    
+
     private function createDepartment(array $data)
     {
     	//should be improved soon...
@@ -80,9 +79,8 @@ class Helpdesk
     
     protected static function ThrowParentMethodNotSetExceptionIfAny()
     {
-    	if (! isset(static::$type)) {
+        if (! isset(static::$type)) {
             throw ParentMethodNotSet::message();
         }
     }
-    
 }
