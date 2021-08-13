@@ -10,6 +10,8 @@ class Helpdesk
     protected $collection;
 
     protected $type;
+    
+    protected static $types = ['department'];
 
     public function __construct()
     {
@@ -31,7 +33,7 @@ class Helpdesk
         if (! isset($this->type)) {
             throw ParentMethodNotSet::message();
         }
-
+        
         return $this->collection;
     }
 
@@ -39,4 +41,33 @@ class Helpdesk
     {
         return $this->collection = Department::all();
     }
+    
+    
+    public function create(array $data=[])
+    {
+    	if (! isset($this->type)) {
+            throw ParentMethodNotSet::message();
+        }
+        
+        if($this->type === static::$types[0]) {
+        	$this->collection = $this->createDepartment($data);
+        }
+        
+        //
+        
+        
+        return $this->collection;
+    }
+    
+    
+    private function createDepartment(array $data)
+    {
+    	$array = [
+			'name' => $data['name'],
+			'description' => $data['description']
+		];
+		
+    	return Department::create($array);
+    }
+    
 }
