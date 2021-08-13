@@ -5,7 +5,7 @@ namespace Albinvar\Helpdesk\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HelpdeskTicket extends Model
+class Ticket extends Model
 {
     use HasFactory;
 
