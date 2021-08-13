@@ -6,6 +6,8 @@ use Albinvar\Helpdesk\Exceptions\ParentMethodNotSet;
 use Albinvar\Helpdesk\Models\Department;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Exception;
+use Illuminate\Database\QueryException;
 
 class Helpdesk
 {
@@ -62,15 +64,21 @@ class Helpdesk
     	//should be improved soon...
     	$array = [
 			'name' => $data['name'],
-			'description' => $data['description']
+			'description' => $data['description'],
 		];
 		
 		//should be validated.
-    	return Department::create($array);
+		try {
+	    	$department = Department::create($array);
+		} catch(Exception $e) {
+			throw new Exception('Database insertion failed.');
+		}
+		
+		return $department;
     }
     
     
-    public static function ThrowParentMethodNotSetExceptionIfAny()
+    protected static function ThrowParentMethodNotSetExceptionIfAny()
     {
     	if (! isset(static::$type)) {
             throw ParentMethodNotSet::message();
