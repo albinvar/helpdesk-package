@@ -12,6 +12,7 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
+
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Albinvar\\Helpdesk\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
@@ -28,9 +29,9 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_helpdesk-package_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+
+        include_once __DIR__.'/../database/migrations/create_helpdesk_departments_table.php.stub';
+
+        (new \CreateHelpdeskDepartmentsTable())->up();
     }
 }

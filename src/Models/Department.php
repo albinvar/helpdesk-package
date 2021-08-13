@@ -5,7 +5,7 @@ namespace Albinvar\Helpdesk\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HelpdeskTicket extends Model
+class Department extends Model
 {
     use HasFactory;
 
@@ -13,12 +13,11 @@ class HelpdeskTicket extends Model
     // Disable Laravel's mass assignment protection
     protected $guarded = [];
 
+    protected $table = 'helpdesk_departments';
+
     protected $fillable = [
-      'user_id',
-      'priority_id',
-      'department_id',
-      'title',
-      'labels',
+      'name',
+      'description',
   ];
 
 
@@ -26,8 +25,8 @@ class HelpdeskTicket extends Model
 
     ];
 
-    public function user()
+    public function tickets()
     {
-        return $this->belongsTo(config('auth.providers.users.model'));
+        return $this->hasMany(Ticket::class);
     }
 }

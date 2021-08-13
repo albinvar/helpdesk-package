@@ -5,7 +5,7 @@ namespace Albinvar\Helpdesk\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HelpdeskDepartment extends Model
+class Ticket extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,11 @@ class HelpdeskDepartment extends Model
     protected $guarded = [];
 
     protected $fillable = [
-      'name',
-      'description',
+      'user_id',
+      'priority_id',
+      'department_id',
+      'title',
+      'labels',
   ];
 
 
@@ -23,8 +26,8 @@ class HelpdeskDepartment extends Model
 
     ];
 
-    public function tickets()
+    public function user()
     {
-        return $this->hasMany(HelpdeskTicket::class);
+        return $this->belongsTo(config('auth.providers.users.model'));
     }
 }

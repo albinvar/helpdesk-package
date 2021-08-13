@@ -16,11 +16,6 @@ class HelpdeskSeederCommand extends Command
         $this->info('Seeding tables...');
 
 
-        if ($this->app->runningInConsole()) {
-            if ($this->isConsoleCommandContains([ 'db:seed', '--seed' ], [ '--class', 'help', '-h' ])) {
-                $this->seeder();
-            }
-        }
 
         $this->info('Seeding processed');
     }
