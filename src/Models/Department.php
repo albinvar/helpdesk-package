@@ -12,7 +12,7 @@ class Department extends Model
 
     // Disable Laravel's mass assignment protection
     protected $guarded = [];
-    
+
     protected $table = 'helpdesk_departments';
 
     protected $fillable = [
