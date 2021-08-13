@@ -3,11 +3,11 @@
 namespace Albinvar\Helpdesk\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Albinvar\Helpdesk\Models\HelpdeskDepartment;
+use Albinvar\Helpdesk\Models\Department;
 
-class HelpdeskDepartmentFactory extends Factory
+class DepartmentFactory extends Factory
 {
-    protected $model = HelpdeskDepartment::class;
+    protected $model = Department::class;
 
     public function definition()
     {

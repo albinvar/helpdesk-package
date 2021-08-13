@@ -3,7 +3,7 @@
 namespace Albinvar\Helpdesk\Tests;
 
 use Albinvar\Helpdesk\Helpdesk;
-use Albinvar\Helpdesk\Models\HelpdeskDepartment;
+use Albinvar\Helpdesk\Models\Department;
 use Illuminate\Database\Eloquent\Collection;
 
 class DepartmentTest extends TestCase
@@ -16,7 +16,7 @@ class DepartmentTest extends TestCase
         $helpdesk = new Helpdesk();
         $departments = $helpdesk->department()->all();
         $this->assertInstanceOf(Collection::class, $departments);
-        $this->assertEquals(HelpdeskDepartment::all(), $departments);
+        $this->assertEquals(Department::all(), $departments);
     }
 
     /**
@@ -24,10 +24,10 @@ class DepartmentTest extends TestCase
     **/
     public function test_if_deparment_get_method_works()
     {
-        $department = HelpdeskDepartment::factory()->create();
+        $department = Department::factory()->create();
 
         $helpdesk = new Helpdesk();
 
-        $this->assertEquals(HelpdeskDepartment::find($department->id), $helpdesk->department($department->id)->get());
+        $this->assertEquals(Department::find($department->id), $helpdesk->department($department->id)->get());
     }
 }

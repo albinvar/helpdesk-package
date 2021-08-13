@@ -3,7 +3,7 @@
 namespace Albinvar\Helpdesk;
 
 use Albinvar\Helpdesk\Exceptions\ParentMethodNotSet;
-use Albinvar\Helpdesk\Models\HelpdeskDepartment;
+use Albinvar\Helpdesk\Models\Department;
 
 class Helpdesk
 {
@@ -21,7 +21,7 @@ class Helpdesk
         $this->type = __FUNCTION__;
 
         (is_null($id)) ? $this->collection = null
-                        : $this->collection = HelpdeskDepartment::find($id);
+                        : $this->collection = Department::find($id);
 
         return $this;
     }
@@ -37,6 +37,6 @@ class Helpdesk
 
     public function all()
     {
-        return $this->collection = HelpdeskDepartment::all();
+        return $this->collection = Department::all();
     }
 }
