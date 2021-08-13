@@ -14,13 +14,8 @@ class HelpdeskSeederCommand extends Command
     public function handle()
     {
         $this->info('Seeding tables...');
-
-
-        if ($this->app->runningInConsole()) {
-            if ($this->isConsoleCommandContains([ 'db:seed', '--seed' ], [ '--class', 'help', '-h' ])) {
-                $this->seeder();
-            }
-        }
+        
+        
 
         $this->info('Seeding processed');
     }
